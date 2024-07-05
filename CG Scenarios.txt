@@ -1,0 +1,8 @@
+22.	How to capture duplicate data in DataStage (or) I have a file A and the column is eno and values in eno are 1, 2,3,4,1 and, 2. I want 1,2,3,4 (unique records) in one file and 1,2 (duplicate records) in another file. How will u do that in DataStage?
+Ans: By using “Create key change column” property in sort stage we can capture the duplicates. This property will give 1 to unique records and 0 to duplicate records. Then by using filter or transformer stage, we can send unique records into one file and duplicate records into another file. 
+
+23.	) I have a file A and the column is eno and values in eno are 1, 2,3,4,1 and, 2. I want 3, 4 (complete unique records) in one file and 1, 2 (complete duplicate records) in another file. How will u do that in DataStage?
+Ans: By using “aggregator” stage we can do that. We need to set “aggregator type=count rows” and output column name=out1 and group by =eno (key column)”. Then by using filter or transformer stage, we can send complete unique records into one file and complete duplicate records into another file. 
+I have File A and B. Both are customer files. File A is having a, b, c are columns. File B is having b and c is columns. I want an output in File C where a, b and c are columns. I have 10 records in File A and 5 records in file B. Now tell me how to concatenate these two files in DataStage?
+Ans:
+In file A, a, b, c are the columns and in file B, b and c are the columns. So we need to generate a dummy column ‘a’ (a is the column name) in File B by using “Column Generator “ stage, then by using Funnel stage we can concatenate these 2 files. Then u will get 15 records in output.
