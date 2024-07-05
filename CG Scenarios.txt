@@ -4,7 +4,7 @@ Ans: By using “Create key change column” property in sort stage we can captu
 This property will give 1 to unique records and 0 to duplicate records. 
 Then by using filter or transformer stage, we can send unique records into one file and duplicate records into another file. 
 
-23.	) I have a file A and the column is eno and values in eno are 1, 2,3,4,1 and, 2. 
+23.) I have a file A and the column is eno and values in eno are 1, 2,3,4,1 and, 2. 
 I want 3, 4 (complete unique records) in one file and 1, 2 (complete duplicate records) in another file. 
 How will u do that in DataStage?
 Ans: By using “aggregator” stage we can do that. We need to set “aggregator type=count rows” 
